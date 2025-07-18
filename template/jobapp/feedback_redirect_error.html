@@ -1,0 +1,27 @@
+<!-- feedback_redirect_error.html -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="section-hero overlay inner-page bg-image"
+    style="background-image: url('{% static 'images/hero_1.jpg' %}');" id="home-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h1 class="text-white font-weight-bold">Feedback Error</h1>
+                <div class="custom-breadcrumbs">
+                    <a href="{% url 'jobapp:home' %}">Home</a> <span class="mx-2 slash">/</span>
+                    <span class="text-white"><strong>Feedback</strong></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+  <div class="container mt-5">
+    <h1 class="text-center">Feedback Submission Error</h1>
+    <p class="text-center">There was an error processing your feedback. Please try again later.</p>
+    <p class="text-center"><a href="{% url 'jobapp:feedback_redirect' %}">Return to Feedback Form</a></p>
+  </div>
+  <br><br>
+{% endblock %}

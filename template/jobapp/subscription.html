@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/subscription.css' %}">
+
+<section class="section-hero overlay inner-page bg-image"
+style="background-image: url('{% static 'images/hero_1.jpg' %}');" id="home-section">
+<div class="container">
+    <div class="row">
+        <div class="col-md-7">
+            <h1 class="text-white font-weight-bold">Employer Subscription</h1>
+            <div class="custom-breadcrumbs">
+                <a href="{% url 'jobapp:home' %}">Home</a> <span class="mx-2 slash">/</span>
+                <span class="text-white"><strong>Subscription</strong></span>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<br><br><br>
+<div id="price">
+  <!--price tab-->
+  <div class="plan">
+    <div class="plan-inner">
+      <div class="entry-title">
+        <h3>Free</h3>
+        <div class="price">&#8377;0<span>/YEAR</span>
+        </div>
+      </div>
+      <div class="entry-content">
+        <ul>
+          <li>Can post 2 jobs every month</li>
+        </ul>
+      </div>
+      <div class="btn1">
+        <a href="#">Subscribe</a>
+      </div>
+    </div>
+  </div>
+  <!-- end of price tab-->
+  <!--price tab-->
+  <div class="plan basic">
+    <div class="plan-inner">
+      <div class="entry-title">
+        <h3>Basic</h3>
+        <div class="price">&#8377;199<span>/YEAR</span>
+        </div>
+      </div>
+      <div class="entry-content">
+        <ul>
+          <li>Can post 10 jobs every month</li>
+        </ul>
+      </div>
+      <div class="btn1">
+        <a href="#">Subscribe</a>
+      </div>
+    </div>
+  </div>
+  <!-- end of price tab-->
+  <!--price tab-->
+  <div class="plan standard">
+    <div class="plan-inner">
+      <div class="hot">hot</div>
+      <div class="entry-title">
+        <h3>Standard</h3>
+        <div class="price">&#8377;499<span>/YEAR</span>
+        </div>
+      </div>
+      <div class="entry-content">
+        <ul>
+          <li>Can post 20 jobs every month</li>
+        </ul>
+      </div>
+      <div class="btn1">
+        <a href="#">Subscribe</a>
+      </div>
+    </div>
+  </div>
+  <!-- end of price tab-->
+  <!--price tab-->
+  <div class="plan ultimite">
+    <div class="plan-inner">
+      <div class="entry-title">
+        <h3>Premium</h3>
+        <div class="price">&#8377;999<span>/YEAR</span>
+        </div>
+      </div>
+      <div class="entry-content">
+        <ul>
+          <li>Can post Unlimited jobs every month</li>
+        </ul>
+      </div>
+      <div class="btn1">
+        <a href="#">Subscribe</a>
+      </div>
+    </div>
+  </div>
+  <!-- end of price tab-->
+</div>
+<br><br><br>
+
+{% endblock %}

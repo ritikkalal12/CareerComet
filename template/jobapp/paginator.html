@@ -1,0 +1,36 @@
+{% if page_obj.has_other_pages %}
+<div class="row pagination-wrap">
+  <div class="col-md-6 text-center text-md-left mb-4 mb-md-0">
+    <span class="page-navigator">Showing {{ page_obj.number }} of {{ page_obj.paginator.num_pages }} Pages</span>
+  </div>
+  <div class="col-md-6 text-center text-md-right">
+    <div class="custom-pagination ml-auto">
+      
+      <span class="prev-page">
+        {% if page_obj.has_previous %}
+          <a class="ajax-paginator" href="?page={{ page_obj.previous_page_number }}" class="prev">Prev</a>
+        {% endif %}
+      </span>
+      
+      <span class="page-no">
+        <div class="d-inline-block">
+          {% for i in page_obj.paginator.page_range %}
+            {% if page_obj.number == i %}
+              <a class="ajax-paginator ajax_paginator_{{ i }} active" href="?page={{ i }}">{{ i }}</a>
+            {% else %}
+              <a class="ajax-paginator ajax_paginator_{{ i }}" href="?page={{ i }}">{{ i }}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </span>
+      
+      {% if page_obj.has_next %}
+        <span class="next-page">
+          <a class="ajax-paginator next" href="?page={{ page_obj.next_page_number }}">Next</a>
+        </span>
+      {% endif %}
+    
+    </div>
+  </div>
+</div>
+{% endif %}

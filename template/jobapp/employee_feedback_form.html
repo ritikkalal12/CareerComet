@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="section-hero overlay inner-page bg-image"
+style="background-image: url('{% static 'images/hero_1.jpg' %}');" id="home-section">
+<div class="container">
+    <div class="row">
+        <div class="col-md-7">
+            <h1 class="text-white font-weight-bold">Job Seeker Feedback</h1>
+            <div class="custom-breadcrumbs">
+                <a href="{% url 'jobapp:home' %}">Home</a> <span class="mx-2 slash">/</span>
+                <span class="text-white"><strong>Feedback</strong></span>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+  <form method="post" action="{% url 'jobapp:employee_feedback_form' %}">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="rating">Rate your experience:</label>
+        <div class="rating">
+          <input type="radio" name="rating" id="star5" value="5"><label for="star5"></label>
+          <input type="radio" name="rating" id="star4" value="4"><label for="star4"></label>
+          <input type="radio" name="rating" id="star3" value="3"><label for="star3"></label>
+          <input type="radio" name="rating" id="star2" value="2"><label for="star2"></label>
+          <input type="radio" name="rating" id="star1" value="1"><label for="star1"></label>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="comments">Tell us more:</label>
+        <textarea id="comments" name="comments" rows="4" placeholder="Share your thoughts..."></textarea>
+      </div>
+      <div class="btn">
+        <button type="submit">Submit Feedback</button>
+      </div>
+  </form>
+  <br><br>
+{% endblock %}
+
+
+{% block extra_head %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/feedback.css' %}">
+{% endblock %}
